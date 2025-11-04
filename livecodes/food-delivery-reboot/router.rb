@@ -14,12 +14,15 @@ class Router
         if @employee.manager?
           display_manager_options
           action = gets.chomp.to_i
+          print `clear`
           route_manager_action(action)
         else
           display_rider_options
           action = gets.chomp.to_i
+          print `clear`
           route_rider_action(action)
         end
+        puts "---"
       end
     end
 
