@@ -5,6 +5,7 @@ class Employee
   # password: String
   # role: String => "manager", "rider"
   attr_reader :username, :password, :role
+  attr_accessor :id
 
   def initialize(attributes = {})
     @id       = attributes[:id]
@@ -15,5 +16,9 @@ class Employee
 
   def manager?
     @role == "manager"
+  end
+
+  def rider?
+    @role == "rider"
   end
 end

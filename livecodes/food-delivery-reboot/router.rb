@@ -7,6 +7,7 @@ class Router
   end
 
   def run
+    puts BONUS
     puts "Welcome to Food Delivery app"
     while @running
       @employee = @sessions_controller.login
@@ -30,6 +31,7 @@ class Router
   end
 
   def display_manager_options
+    puts "-----Manager Menu-----"
     puts "1. List all meals"
     puts "2. Add a meal"
     puts "3. List all customers"
@@ -39,6 +41,7 @@ class Router
   end
 
   def display_rider_options
+    puts "-----Rider Menu-----"
     puts "1. mark one of my orders as delivered"
     puts "2. list all my undelivered orders"
     puts "8. Logout"
@@ -81,4 +84,14 @@ class Router
       puts "Choose between 1,2 or 5"
     end
   end
+  BONUS = "
+
+          (_\\
+         / \\
+    `== / /\\=,_
+     ;--==\\\\  \\\\o
+     /____//__/__\\
+   @=`(0)     (0)
+
+  "
 end
