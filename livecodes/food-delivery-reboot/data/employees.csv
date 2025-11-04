@@ -1,0 +1,4 @@
+id,username,password,role
+1,luna,secret,manager
+2,harry,secret,rider
+3,draco,secret,rider
