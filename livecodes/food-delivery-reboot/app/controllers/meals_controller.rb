@@ -15,7 +15,6 @@ class MealsController
     price = @meal_view.ask_for("Price").to_i
     # 3. Instanciar uma nova meal (criar uma nova meal)
     meal = Meal.new(name: name, price: price)
-    p meal
     # 4. Pedir pro repositório CRIAR DE FATO!
     @meal_repository.create(meal)
   end

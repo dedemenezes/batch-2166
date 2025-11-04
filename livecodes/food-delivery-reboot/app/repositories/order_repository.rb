@@ -1,4 +1,7 @@
 require "csv"
+require "pry-byebug"
+
+require_relative "../models/order"
 
 class OrderRepository
   def initialize(csv_file_path, meal_repository, customer_repository, employee_repository)
@@ -19,6 +22,15 @@ class OrderRepository
 
   def undelivered_orders
     @orders.reject { |order| order.delivered? }
+  end
+
+  def my_undelivered_orders(employee)
+    @orders.select { |order| order.employee == employee }
+  end
+
+  def mark_as_delivered(order)
+    order.deliver!
+    save_csv
   end
 
   private
