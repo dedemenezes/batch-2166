@@ -1,77 +1,72 @@
-// Basico
+// Comments are written using double (//)
 
-// Variables
-// ruby: first_name = "Luna"
-// firstName = "NEville"
+// Naming conventions ⤵️
+// ruby: snake_case example: first_name
+// JS:   camelCase  example: firstName
 
-// Constante -> não podem ser alteradas
-const firstName = "Neville"
-// Regulares -> podem ser alteradas
-let age = 27
-// age = age + 1
-age += 1
+//////// JS BASICS ////////
 
-// Print
-// Ruby: puts name
-console.log(firstName)
-console.log(age)
-// run the file
+// Ruby vs JS
+// Printing
+// ruby
+// puts "Welcome to Hogwarts"
+// JS
+console.log("Welcome to Hogwarts");
+
+// Executing a file in your terminal
 // ruby path/to/file.rb
 // node path/to/file.js
 
-// Find the class
-// "andre".class #=> String
-console.log(typeof(firstName))
+// Variables
+// const can't be reassigned
+const name = "Luna Lovegood";
+const welcomeMessage = `Hello, ${name} ✌️`;
+console.log(welcomeMessage);
+
+// let can be reassigned
+let age = 21;
+// age = age + 1
+age += 1;
+console.log(age);
 
 // String
-"This is a strig"
-'This is also a string'
-// Interpolation
-// ruby: "My name is #{first_name}"
-const sentence = `My name is ${firstName}`
-console.log(sentence)
-// Converter string para number
-// ruby "13".to_i
-const stringToNumber = Number.parseInt("13", 10)
-console.log(stringToNumber)
-
-// Number == Integer && Float
-console.log(13 + 2)
-console.log(13.3 * 4)
+const year = "2023";
+const yearAsNumber = parseInt(year, 10);
+console.log(yearAsNumber);
 
 // Array
-const students = ["Neville", "Luna", "Ron"]
-console.log(students[1])
-students[2] = "Cho"
-console.log(students)
+const students = ['Luna Lovegood', 'Ron Weasley'];
+console.log(students);
+console.log(students[1]);
+
+// Number == Integer && Float
+console.log(13)
+console.log(13.2)
 
 // Object == Hash
 const school = {
-  // JS NÃO tem symbols
-  // as chaves são SEMPRE strings
-  // chave: valor
   name: "Hogwarts",
-  location: "UK",
-  numberOfStudents: 130
+  location: "UK"
 }
+console.log(school)
 // console.log(school["name"])
-// console.log(school["numberOfStudents"])
 console.log(school.name)
-console.log(school.numberOfStudents)
+// console.log(school["location"])
+console.log(school.location)
 
 school.name = "Le Wagon"
 console.log(school)
 
 // Boolean
-console.log(typeof(false))
+console.log(true)
+console.log(false)
 
 // Conditionals
-// RUBY
+// Ruby
 // if age >= 18
-//   puts "Can drink!"
 // else
-//   puts "can't drink!"
 // end
+
 if (age >= 18) {
   console.log("Can drink!")
 } else {
@@ -79,38 +74,31 @@ if (age >= 18) {
 }
 
 // Functions == Methods
-// def method_name(param1, param2,...)
+// def method_name(param1, param2)
 // end
+// const methodName = (param1, param2) {
+//   return algumaCoisa;
+// }
+const addition = (numberOne, numberTwo) => {
+  return numberOne + numberTwo
+};
 
-// OLD WAY -> DON'T USE THIS
+console.log(addition(2, 4.5))
+
+// OLD WAY
 // function addition(numberOne, numberTwo) {
-//   // return é OBRIGATORIO!
 //   return numberOne + numberTwo
 // }
 
-// const sum = addition(12, 3)
-// console.log(sum)
 
-// NEW WAY -> USE THIS ONE!
-// ARROW FUNCTION
-const addition = (numberOne, numberTwo) => {
-  return numberOne + numberTwo
-}
-const sum = addition(12, 3)
-console.log(sum)
+// Let's livecode an arrow function and store it into capitalize
+const capitalize = (text) => {
+  // upcase first letter
+  const firstLetter = text[0].toUpperCase()
+  // downcase the rest
+  const rest = text.substring(1).toLowerCase()
+  return `${firstLetter}${rest}`
+};
 
-const multiply = (numberOne, numberTwo) => numberOne * numberTwo
-console.log(multiply(5, 2))
-
-
-const capitalize = (word) => {
-  // 1. acessar a primeira letra
-  // 2. transformar a primeira letra maiuscula
-  const firstLetter = word[0].toUpperCase()
-  // 3. acessar o resto da palavra
-  // 4. transformar em minuscula
-  const restOfWord = word.substring(1).toLowerCase()
-  return `${firstLetter}${restOfWord}`
-}
-
-console.log(capitalize('hElLO'))
+const capitalizedText = capitalize("hoOJE tu nÃo vAi jAntAr");
+console.log(capitalizedText)
